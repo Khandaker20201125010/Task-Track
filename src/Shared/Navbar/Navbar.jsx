@@ -18,7 +18,7 @@ const Navbar = () => {
           className={({ isActive }) => {
             return isActive
               ? "font-bold text-green-500 hover:text-green-700 tooltip tooltip-success   tooltip-bottom"
-              : "font-bold text-white hover:text-green-600 tooltip tooltip-success tooltip-bottom";
+              : "font-bold text-black hover:text-green-600 tooltip tooltip-success tooltip-bottom";
           }}
           to="/"
         >

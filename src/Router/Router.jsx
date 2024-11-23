@@ -6,6 +6,10 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import AllTasks from "../Pages/AllTasks/AllTasks";
 import DashBoard from "../Pages/DashBoard/DashBoard";
+import Login from "../Pages/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp";
+import Addtask from "../Pages/AddTask/Addtask";
+import ManageTask from "../Pages/DashBoard/ManageTask/ManageTask";
   export const router = createBrowserRouter([
       {
         path: "/",
@@ -19,10 +23,29 @@ import DashBoard from "../Pages/DashBoard/DashBoard";
                 path: '/alltasks',
                 element: <AllTasks></AllTasks>
             },
+           
             {
-                path: '/dashboard',
-                element: <DashBoard></DashBoard>
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/signUp',
+                element: <SignUp></SignUp>
             },
         ]
       },
+      {
+        path: 'dashboard',
+        element: <DashBoard></DashBoard>,
+        children: [
+           { 
+            path:'add',
+            element:<Addtask></Addtask>
+        },
+           { 
+            path:'manageTask',
+            element:<ManageTask></ManageTask>
+        },
+        ]
+      }
   ])
