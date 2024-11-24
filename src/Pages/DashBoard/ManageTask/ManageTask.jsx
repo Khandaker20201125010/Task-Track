@@ -65,7 +65,7 @@ const ManageTask = () => {
                     </td>
                     <td>{item.description}</td>
                     <th>
-                      <Link to={`/dashboard/updatetask/${item._id}`}>
+                      <Link to={`/dashboard/updateTask/${item._id}`}>
                         <button className="btn btn-ghost btn-md btn-circle bg-orange-600 hover:bg-red-600">
                           <FaEdit className="text-white text-2xl  hover:bg-red-600"></FaEdit>
                         </button>

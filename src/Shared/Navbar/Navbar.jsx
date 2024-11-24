@@ -26,19 +26,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      <li>
-        <NavLink
-          data-tip="Our Collections"
-          className={({ isActive }) =>
-            isActive
-              ? "font-bold text-green-600 hover:text-green-700 tooltip tooltip-success tooltip-bottom "
-              : "font-bold text-black hover:text-green-600 tooltip tooltip-success tooltip-bottom "
-          }
-          to="/allTasks"
-        >
-          All Tasks
-        </NavLink>
-      </li>
+     
       <li>
         <NavLink
           data-tip="Our Collections"

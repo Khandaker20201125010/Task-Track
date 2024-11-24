@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Addtask from "../Pages/AddTask/Addtask";
 import ManageTask from "../Pages/DashBoard/ManageTask/ManageTask";
+import UpdateTask from "../Pages/DashBoard/UpdateTask/UpdateTask";
   export const router = createBrowserRouter([
       {
         path: "/",
@@ -19,10 +20,7 @@ import ManageTask from "../Pages/DashBoard/ManageTask/ManageTask";
                 path: '/',
                 element: <Home></Home>
             },
-            {
-                path: '/alltasks',
-                element: <AllTasks></AllTasks>
-            },
+         
            
             {
                 path: '/login',
@@ -45,6 +43,10 @@ import ManageTask from "../Pages/DashBoard/ManageTask/ManageTask";
            { 
             path:'manageTask',
             element:<ManageTask></ManageTask>
+        },
+           { 
+            path:'updateTask/:id',
+            element:<UpdateTask></UpdateTask>
         },
         ]
       }

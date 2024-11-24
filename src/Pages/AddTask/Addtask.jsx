@@ -10,38 +10,34 @@ const Addtask = () => {
   const axiosPublic = useAxiosPublic();
 
   const onSubmit = async (data) => {
-  
-      const task = {
-        name: data.name,
-    
-        description: data.description,
-    
-      };
-      const taskRes = await axiosPublic.post("/task", task);
-      if (taskRes.data.insertedId) {
-        reset();
-        Swal.fire({
-          position: "top-center",
-          icon: "success",
-          title: `${data.name} has been listed successfully`,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
- 
+    const task = {
+      name: data.name,
+
+      description: data.description,
+    };
+    const taskRes = await axiosPublic.post("/task", task);
+    if (taskRes.data.insertedId) {
+      reset();
+      Swal.fire({
+        position: "top-center",
+        icon: "success",
+        title: `${data.name} has been listed successfully`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    }
   };
   return (
     <div>
-      
       <div className="container mx-auto p-10 bg-gradient-to-r from-slate-900 via-slate-800 min-h-screen to-green-500  shadow-[0_0_25px_10px_rgba(255,165,0,0.5)]">
-      <div className="text-center p-6">
-            <h1 className="text-3xl font-bold text-white">Add Task</h1>
+        <div className="text-center p-6">
+          <h1 className="text-3xl font-bold text-white">Add Task</h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex gap-6">
@@ -59,7 +55,6 @@ const Addtask = () => {
                 />
               </label>
             </div>
-            
           </div>
           <div>
             {/* {description} */}
@@ -74,13 +69,7 @@ const Addtask = () => {
               ></textarea>
             </label>
           </div>
-      
-      
-         
-         
-
           <button className="btn mt-5 bg-gradient-to-r from-white to-green-500 font-bold text-xl">
-          
             Add Task
           </button>
         </form>
